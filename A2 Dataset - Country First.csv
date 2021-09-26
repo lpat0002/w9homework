@@ -1,0 +1,49 @@
+Number,Country,Title,Genre,City,Alt Country
+1,Turkey,The Comedy of Errors,Comedy,Ephesus,
+2,Italy,The Taming of the Shrew,Comedy,Padua,
+3,Italy,The Two Gentlemen of Verona,Comedy,Verona,also Milan
+4,Spain,Love's Labor's Lost,Comedy,Navarre,
+5,Greece,A Midsummer Night's Dream,Comedy,Athens,
+6,Italy,The Merchant of Venice,Comedy,Venice,
+7,United Kingdom,The Merry Wives of Windsor,Comedy,Windsor,
+8,Italy,Much Ado About Nothing,Comedy,Messina,
+9,France,As You Like It,Comedy,Arden,sometimes considered to be in France
+10,Yugoslavia,Twelfth Night,Comedy,Illyria,
+11,Turkey,Troilus and Cressida,Comedy,Troy,
+12,France,All's Well That Ends Well,Comedy,Rossillion [Roussillion],"also Paris, Marseilles, and Florence"
+13,Italy,All's Well That Ends Well,Comedy,Rossillion [Roussillion],"also Paris, Marseilles, and Florence"
+14,Austria,Measure for Measure,Comedy,Vienna,
+15,United Kingdom,"Henry VI, Part 1",History,London,"also Orleans, France"
+16,France,"Henry VI, Part 1",History,London,"also Orleans, France"
+17,United Kingdom,"Henry VI, Part 2",History,London,other UK locations
+18,United Kingdom,"Henry VI, Part 3",History,London,also France
+19,France,"Henry VI, Part 3",History,London,also France
+20,United Kingdom,Richard III,History,London,
+21,United Kingdom,King John,History,London,also France
+22,France,King John,History,London,also France
+23,United Kingdom,Richard II,History,London,also Wales
+24,United Kingdom,"Henry IV, Part 1",History,London,also Wales
+25,United Kingdom,"Henry IV, Part 2",History,London,other UK locations
+26,United Kingdom,Henry V,History,London,other UK locations; also France
+27,France,Henry V,History,London,other UK locations; also France
+28,United Kingdom,Henry VIII,History,London,other UK locations
+29,Italy,Titus Andronicus,Tragedy,Rome,
+30,Italy,Romeo and Juliet,Tragedy,Verona,also Mantua
+31,Italy,Julius Caesar,Tragedy,Rome,other Italian locations
+32,Denmark,Hamlet,Tragedy,Elsinore Castle,
+33,Italy,Othello,Tragedy,Venice,
+34,United Kingdom,King Lear,Tragedy,Britain,mythic pre-Christian Britain
+35,United Kingdom,Macbeth,Tragedy,Inverness,other Scottish locations; British locations
+36,Egypt,Antony and Cleopatra,Tragedy,Alexandria,"spans three continents: also Rome, Messina, Syria, other places in the Roman Empire (including the sea)"
+37,Italy,Antony and Cleopatra,Tragedy,Alexandria,"spans three continents: also Rome, Messina, Syria, other places in the Roman Empire (including the sea)"
+38,Syria,Antony and Cleopatra,Tragedy,Alexandria,"spans three continents: also Rome, Messina, Syria, other places in the Roman Empire (including the sea)"
+39,Greece,Antony and Cleopatra,Tragedy,Alexandria,"spans three continents: also Rome, Messina, Syria, other places in the Roman Empire (including the sea)"
+40,Italy,Coriolanus,Tragedy,Rome,"also Corioles, Antium"
+41,Greece,Timon of Athens,Tragedy,Athens,
+42,Lebanon,Pericles,Romance,Tyre,"other Mediterannean locations including Antioch, Tharsus, Pentapolis, Mytilene, others"
+43,United Kingdom,Cymbeline,Romance,Britain,mythic pre-Christian Britain; also Italy
+44,Italy,Cymbeline,Romance,Britain,mythic pre-Christian Britain; also Italy
+45,Italy,The Winter's Tale,Romance,Sicilia,also Bohemia
+46,Czech Republic,The Winter's Tale,Romance,Sicilia,also Bohemia
+47,(Fictional country),The Tempest,Romance,(Fictional island),
+48,Greece,The Two Noble Kinsmen,Romance,Athens,also Thebes
