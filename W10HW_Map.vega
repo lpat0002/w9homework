@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "projection": {"type": "equirectangular", "center": [15,47], "scale": 600},
+    "width":575,
+    "height":500,
+    "layer": [ {
+    
+        "data": {
+    "url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/shakespeare.topo.geo.json",
+    "format": {"type": "topojson", "feature": "shakespeare.geo"}
+    },
+    "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+        "data": {
+            "url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/shakespeare.topo.geo.json",
+            "format": {"type": "topojson", "feature": "shakespeare.geo"}
+            },
+    "transform": [
+    {
+    "lookup": "properties.name",
+    "from": {
+    "data": {
+    "url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/A2%20Dataset%20-%20Aggregate.csv"
+    },
+    "key": "Country",
+    "fields": ["Total"]
+    }
+    },
+    
+    {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+    ],
+    "mark": {"type": "geoshape"},
+    "encoding": {
+    "color": {
+    "field": "Total",
+    "type": "quantitative",
+
+    "scale": {
+        "type": "threshold",
+        "domain": [2, 5, 10],
+        "range": [ "#bdd7e7", "#6baed6", "#3182bd", "#08519c"]
+        },
+    "legend": {"title": "Total Plays", "orient": "top-left", "direction": "horizontal"}
+    },
+
+    "tooltip": [
+    {"field": "properties.name", "type": "nominal", "title": "Country"},
+    {"field": "Total", "type": "quantitative", "title": "Plays set here"}
+    ]
+    }
+    }
+    ]
+   }

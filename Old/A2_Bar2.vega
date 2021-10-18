@@ -1,0 +1,66 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/A2%20Dataset%20-%20Play%20lengths.csv",
+      "format": {"parse": {"Lines": "number"}}
+    },
+    "width": 525,
+    "height": 550,
+    
+    "encoding": {
+      "y": {"field": "Title", "type": "nominal", "title": "Play Title", "sort": "-x"},
+      "x": {"field": "Lines", "type": "quantitative", 
+      "title": "Number of Lines",
+      "axis": {
+        "tickCount": 10}}},
+
+    "layer": [{
+
+    "params": [
+        {
+            "name": "genre_highlighter",
+            "select": {"type": "point", "fields": ["Genre"]},
+            "bind": "legend"
+        }
+    ],
+
+    "mark": "bar",
+    "encoding": {
+      "color": {
+        "field": "Genre",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Comedy", "Tragedy", "Romance", "History"],
+          "range": ["#fdc086", "#7fc97f", "#386cb0", "#beaed4"]
+        }
+      },
+      "opacity": { 
+            "condition": {"param": "genre_highlighter", "value": 1}, 
+            "value": 0.2 
+      },
+      "tooltip": [
+         {"field": "Title", "type": "nominal", "title": "Play Title"},
+         {"field": "Lines", "type": "quantitative"},
+         {"field": "Genre", "type": "nominal"},
+         {"field": "Year", "type": "ordinal", "title": "Approx. Year Written"}
+      ]
+  }
+  },{
+    "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "dx": 3
+    },
+    "encoding": {
+      "text": {"field": "Lines", "type":"quantitative"},
+      "opacity": {
+        "condition": {"param": "genre_highlighter", "value": 1},
+        "value": 0
+      }
+    }
+    }]
+  }
+   
+  
+  

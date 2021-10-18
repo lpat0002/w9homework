@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple pie chart with embedded data.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/A2%20Dataset%20-%20Hamlet.csv"
+      },
+    "transform": [
+        {
+            "window": [{"op": "rank", "as": "rank"}],
+            "sort": [{"field": "Lines", "order": "descending"}]
+        },
+        {
+            "calculate": "datum.rank < 15 ? datum.Character : 'Others'", "as": "ranked_characters"
+        }
+    ],
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "Lines", "type": "quantitative"},
+      "color": {"field": "ranked_characters", "type": "nominal"},
+      "order" :{"field": "Lines", "sort": "ascending"},
+      "tooltip": [
+        {"field": "ranked_characters", "type": "nominal", "title": "Character"},
+        {"field": "Lines", "type": "quantitative"}
+    ]
+    }
+    
+  }

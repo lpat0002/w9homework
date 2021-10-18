@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Shakespeare's plays over time",
+    "width": 535,
+
+    "data": {"url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/A2%20Dataset%20-%20Play%20lengths.csv",
+    "format": {"parse": {"Year": "date:'%Y'"}}},
+  
+    "params": [{ 
+      "name": "genre_highlighter",
+        "select": {"type": "point", 
+        "fields": ["Genre"]}, 
+        "bind": {"input": "select", 
+          "options": [null, "Comedy", "History", "Tragedy", "Romance"],
+          "labels": ["Show All", "Comedy", "History", "Tragedy", "Romance"],
+          "name": "Select Genre: "}
+    } 
+    ], 
+    
+
+        "mark": {"type": "point", "filled": false,"color": "#000000", "size": 60},
+        "encoding": {
+            "x": {"timeUnit": "year","field": "Year", "title": "Year"},
+            "y": {"field": "Lines", "type": "quantitative"},
+            "opacity": {
+              "condition": {"selection": "genre_highlighter", "value": 0.6},
+              "value": 0
+              },
+            
+          "tooltip": [
+            {"field": "Title", "type": "nominal", "title": "Play Title"},
+            {"field": "Lines", "type": "quantitative"},
+            {"field": "Genre", "type": "nominal"},
+            {"timeUnit": "year", "field": "Year","title": "Approx. Year Written"}
+         ]
+        }
+  }
+  

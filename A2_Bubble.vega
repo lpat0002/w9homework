@@ -1,0 +1,105 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 525,
+    "height": 250,
+    "transform": [
+      {"filter": "datum.Entity !== 'All natural disasters'"}
+    ],
+    "data": {
+      "values": [
+        {
+          "start": "1589",
+          "end": "1593",
+          "event": "Amateur"
+        },
+        {
+          "start": "1594",
+          "end": "1602",
+          "event": "Lord Chamberlain's Men"
+        },
+        {
+            "start": "1603",
+            "end": "1614",
+            "event": "King's Men"
+        }
+      ],
+      "format": {
+        "parse": {"start": "date:'%Y'", "end": "date:'%Y'"}
+      }
+    },
+    "encoding": {
+      "x": {
+        "field": "start",
+        "timeUnit": "year"
+      },
+      "x2": {
+        "field": "end",
+        "timeUnit": "year"
+      }},
+    "layer": [{
+      
+      "mark": "rect",
+       "encoding": {
+          "color": {"field": "event", "type": "nominal", "legend": null,
+        "scale" :{
+          "domain": ["Amateur", "Lord Chamberlain's Men", "King's Men"],
+          "range": ["#1b9e77", "#d95f02", "#7570b3"]
+        }}
+        }
+    },
+    {
+      "mark" : {
+        "type" :"text",
+        "align":"left",
+        "baseline":"middle",
+        "yOffset": 100,
+        "dx": 3,
+        "fontWeight":"bold",
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {"field": "event", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/A2%20Dataset%20-%20Play%20lengths.csv"
+      },
+    "mark": {
+      "type": "circle",
+      "opacity": 0.8,
+      "stroke": "black",
+      "strokeWidth": 1,
+      "fill":"black"
+    },
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "temporal",
+        "axis": {"title": "Year", "grid": true}
+      },
+      "y": {"field": "Genre", "type": "nominal", "axis": {"title": "Genre"},
+        "sort": ["Comedy", "History", "Tragedy", "Romance"]
+    },
+      "size": {
+        "aggregate":"count",
+        "legend": {
+          "values":["1", "2"],
+          "title": "Number of Plays Written",
+          "format": ".0f",
+          "orient": "top-right",
+          "strokeColor": "black",
+          "padding": 3
+        }
+      },
+      "color": {"field": "Entity", "type": "nominal", "legend": null},
+      "tooltip": [
+        {"field": "Genre", "type": "nominal"},
+        {"timeUnit": "year", "field": "Year","title": "Year"}
+     ]
+      
+    }
+  }]
+}
+
+  

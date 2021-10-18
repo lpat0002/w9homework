@@ -1,0 +1,35 @@
+.play_text {
+    color:blue;
+}
+
+.amateur_text{
+    color:#1b9e77;
+    font-weight: bold;
+}
+
+.lord_text{
+    color:#d95f02;
+    font-weight: bold;
+}
+
+.king_text{
+    color:#7570b3;
+    font-weight: bold;
+}
+
+
+
+h1 {
+    font-family: 'Cardo', serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+h2 {
+    font-family: 'Cardo', serif;
+    font-size:larger;
+}
+
+p {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

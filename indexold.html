@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -16,11 +16,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Oswald:wght@300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
 
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/layout2.css">
 
     <title>Shakespeare Visualised</title>
 </head>
@@ -32,28 +31,25 @@
     <figcaption>Thomas Stothard, 'Shakepearean Characters', 1813.<sup>1</sup></figcaption>
     </div>
 
-    <div class="centre"><h2>Genres of Plays Over Time</h2></div>
-    <div class="pure-g">
-    <div class="pure-u-1-4">
+    <div class="centre"><h2>Shakespeare's Play's Over Time</h2></div>
+    <div class="row">
+    <div class="column_side">
         <p>Little is known about Shakespeare's early life.
-            He appears as an <span class="amateur_text"> amateur</span> playwright and actor in the late 1580s.
+            He appears as an <span class="play_text"> amateur</span> playwright and actor in the late 1580s.
             The black plague stuck London in 1593, closing the city and its theatres for 14 months.
             Shakespeare likely returned to his home in Stratform-upon-Avon during this time.
         </p>
-        <p>In 1594 he co-founds the theatre company  <span class="lord_text">'Lord Chamberlain's Men' </span> and begins writing a lot more.
+        <p>In 1594 he co-founds the theatre company  <span class="play_text">'Lord Chamberlain's Men' </span> and begins writing a lot more.
             He also achieves great success, becoming one of the most popular playwrights of the time.
         </p>    
     </div>
-    <div class="pure-u-1-2">
-        <div id="bubbleplot">    
+    <div class="column_middle">
+        <div id="scatterplot">    
         </div>
-        <p>Note that the 'History' genre was typically focussed on anxiety about the Queen's lineage and largely vanished after her death in 1603.
-            Similarly, the 'Romance' genre emerged at the end of Shakespeare's career and combines elements of Comedy and Tragedy.
-        </p>
     </div>
-    <div class="pure-u-1-4">
+    <div class="column_side">
         <p>Queen Elizabeth I dies in 1603 and is replaced with King James I. 
-                Shakespeare's theatre company then becomes the  <span class="king_text">'King's Men' </span> under the patronage of the new monarch.</p>
+                Shakespeare's theatre company then becomes the  <span class="play_text">'King's Men' </span> under the patronage of the new monarch.</p>
         <p>Almost all of these datings are approximates.
                 The dates are based on personal diaries of those who may have seen his plays, publishing dates, official documents and artistic style.
             </p> 
@@ -63,49 +59,22 @@
 
     <hr>
 
-    <div class="centre"><h2>Length of Plays Over Time</h2></div>
-    <div class="pure-g">
-    <div class="pure-u-1-4">
-        <p>
-            Over time the length of Shakepeare's plays are similar - around 3000 lines. 
-        </p>    
-        <p>
-            This graph also demonstrates how much Shakespeare wrote, sometimes around 3 plays a year and at least 38 plays in 25 years.
-            And when he wasn't writing plays he wrote 154 sonnets and a number of short narrative poems including 'Venus and Adonis'.
-        </p>
-    </div>
-    <div class="pure-u-1-2">
-        <div id="scatterplot">    
-        </div>
-    </div>
-    <div class="pure-u-1-4">
-        <p>
-            Shakespeare didn't personally publish many of his plays as writers may do now.
-            Many plays were compiled after his death in the 1623 'First Folio'. 
-            For this reason, the plays as we have them today may not be what were originally performed and could have been made shorter for performance,
-            or made longer with interludes of song, dance or comedy.
-        </p>   
-    </div>
-    </div>
-
-    <hr>
-
     <div class="centre"><h2>Lengths of Shakepeare's Plays</h2></div>
-    <div class="pure-g">
-    <div class="pure-u-1-4">
+    <div class="row">
+    <div class="column_side">
         <p>On average, every 1000 lines is 1 hour in performance.
         For example, it would take about 2 hours to perform all 2165 lines of <span class="play_text"> A Midsummer Night's Dream.</span>
         </p>    
-        <p>Longer plays, like <span class="play_text"> Hamlet</span> and <span class="play_text"> Richard III</span>, could take over 4 hours!
-            For this reason, these plays are often shortened by directors to about 2 to 3 hours.
+        <p>Longer plays, like <span class="play_text"> Hamlet</span> and <span class="play_text"> Richard III</span> could take 4 hours!
+            For this reason, these plays are often shortened by directors to about 2 hours.
             It is unlikely that all 4024 lines of <span class="play_text"> Hamlet</span> were performed even in Shakespeare's day.
         </p>
     </div>
-    <div class="pure-u-1-2">
+    <div class="column_middle">
         <div id="barchart">    
         </div>
     </div>
-    <div class="pure-u-1-4">
+    <div class="column_side">
         <p>Click the legend below to highlight the selected genre.</p>
         <p>&nbsp</p> 
         <p>Tragedies tend to be longer and more intense, while comedies are usually shorter and lighter.</p> 
@@ -117,19 +86,19 @@
     <hr>
 
     <div class="centre"><h2>Settings of Shakespeare's Plays</h2></div>
-    <div class="pure-g"> 
-        <div class="pure-u-1-4">
+    <div class="row"> 
+        <div class="column_side">
             <p>Shakespeare set his plays in many different locations, mainly throughout Europe and rarely in Africa and Egypt.</p>
             <p>Italy was a very popular location for writers during Shakespeare's time.
             The Italian renaissance led to a boom in artistic exports such as poetry and short stories that became very popular in England.
             Some believe that Shakespeare travelled to Italy at some point, although there is no evidence for this.</p>
             
         </div>
-        <div class="pure-u-1-2">
+        <div class="column_middle">
             <div id="chmap">
             </div>
             </div>
-        <div class="pure-u-1-4">
+        <div class="column_side">
             <p> <span class="play_text">The Tempest</span> is the only play not included here. It takes place on a fictional island possibly in the Caribbean.</p>
             <p> <span class="play_text">Antony and Cleopatra</span> takes place in 3 different countries and 3 different continents; Italy, Egypt and Syria.</p>
             <p>It is unclear where <span class="play_text"> As You Like It</span> takes place. Arden could refer to the Arden Forest in England, or the Ardennes region in France. In this map it is included in France.</p> 
@@ -139,12 +108,6 @@
     <hr>
     
     <div><sup>1</sup>Photo © Tate https://www.tate.org.uk/art/artworks/stothard-shakespearean-characters-n01830</div>
-    <div><p>Data obtained from:</p>
-    <p>https://www.playshakespeare.com/study/play-lengths</p>
-    <p>https://www.rsc.org.uk/shakespeares-plays/timeline</p>
-    <p>https://folgerpedia.folger.edu/List_of_settings_for_Shakespeare%27s_plays</p>
-    <p>Visualisation created by Liam Paternott</p></div>
-
 
 </div>
 </div>

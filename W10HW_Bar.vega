@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/A2%20Dataset%20-%20Play%20lengths.csv"
+    },
+    "width": 450,
+    "height": 500,
+    "transform": [
+      {"bin": {"step": 0.5, "extent": [5, 7]}, "field": "mag", "as": "magnitude"}
+    ],
+    "encoding": {
+      "y": {"field": "Title", "type": "nominal", "title": "Play Title", "sort": false},
+      "x": {"field": "Lines", "type": "quantitative", 
+      "title": "Number of Lines",
+      "axis": {
+        "tickCount": 10}}},
+
+    "layer": [{
+
+      "selection": { 
+        "genre_highlighter": { 
+          "type": "multi", 
+          "fields": ["Genre"], 
+          "bind": "legend" 
+        } 
+      },
+
+    "mark": "bar",
+      "encoding": {
+      "y": {"field": "Title", "type": "nominal", "title": "Play Title"},
+      "x": {"field": "Lines", "type": "quantitative", 
+      "title": "Number of Lines",
+      "axis": {
+        "tickCount": 10}},
+      "color": {
+        "field": "Genre",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Comedy", "History",  "Romance", "Tragedy"],
+          "range": ["#e78ac3", "#e5c494",  "#ffd92f", "#e41a1c"]
+        },
+        "legend": {"title": "Genre", "orient": "bottom-right", "labelFontSize": 14, "titleFontSize":14}
+      },
+      "opacity": { 
+            "condition": {"selection": "genre_highlighter", "value": 1}, 
+            "value": 0.2 
+      },
+      "tooltip": [
+         {"field": "Title", "type": "nominal", "title": "Play Title"},
+         {"field": "Lines", "type": "quantitative"},
+         {"field": "Genre", "type": "nominal"},
+         {"field": "Year", "type": "ordinal", "title": "Approx. Year Written"}
+      ]
+  }
+  },{
+    "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "dx": 3
+    },
+    "encoding": {
+      "text": {"field": "Lines", "type":"quantitative"},
+      "opacity": {
+        "condition": {"selection": "genre_highlighter", "value": 1},
+        "value": 0
+      }
+    }
+    }]
+  }
+   
+  
+  

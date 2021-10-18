@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Google's stock price over time.",
+    "data": {"url": "https://raw.githubusercontent.com/lpat0002/w9homework/main/A2%20Dataset%20-%20Play%20lengths.csv",
+    "format": {"parse": {"Year": "date:'%Y'"}}},
+    "layer":[
+    {
+    "mark":"rect",
+     "data" : {
+         "values":[
+             {
+                "start": "1589",
+                "end": "1593",
+                "event": "Amateur Playwright"
+             },
+             {
+                "start": "1594",
+                "end": "1602",
+                "event": "Lord Chamberlain's Men"
+             },
+             {
+                "start": "1603",
+                "end": "1614",
+                "event": "King's Men"
+             }
+            ],
+            "format": {
+                "parse": {"start": "date:'%Y'", "end": "date:'%Y'"}
+              }
+        },
+    "encoding": {
+        "x": {
+          "field": "start",
+          "timeUnit": "year"
+        },
+        "x2": {
+          "field": "end",
+          "timeUnit": "year"
+        },
+        "color": {"field": "event", "type": "nominal"}
+      }},
+      {
+        "mark": {"size": 100, "type": "circle"},
+        "encoding": {
+          "x": {"timeUnit": "year","field": "Year", "title": "Year"},
+          "y": {"field": "Lines", "type": "quantitative"},
+          "color": {
+            "field": "Genre",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Comedy", "Tragedy", "Romance", "History"],
+              "range": ["#fdc086", "#7fc97f", "#386cb0", "#beaed4"]
+            }},
+          "tooltip": [
+            {"field": "Title", "type": "nominal", "title": "Play Title"},
+            {"field": "Lines", "type": "quantitative"},
+            {"field": "Genre", "type": "nominal"},
+            {"timeUnit": "year", "field": "Year","title": "Approx. Year Written"}
+         ]
+          
+        }
+        }
+    ]
+}
